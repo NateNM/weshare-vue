@@ -1,29 +1,34 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-// import Home from '../views/Home.vue';
-// import About from '../views/About.vue';
-// import Login from '../views/Login.vue';
+import Login from '../views/Auth/Login.vue';
+import Expenses from '../views/Expenses.vue';
+import Payable from '../views/Payable.vue';
+import Receivable from '../views/Receivable.vue';
 
 const routes: Array<RouteRecordRaw> = [  
   {
     path: '/',
-    name: 'Home',
+    name: 'Login',
     component: Login
   },
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/expenses',
+    name: 'Expenses',
+    component: Expenses
   },
-
   {
-    path: '/about',
-    name: 'About',
-    component: About
+    path: '/payable',
+    name: 'Payable',
+    component: Payable
+  },
+  {
+    path: '/receivable',
+    name: 'Receivable',
+    component: Receivable
   }
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes
 });
 
